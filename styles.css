@@ -1,0 +1,371 @@
+/* Reset and Global Styles */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  :root {
+      --primary-color: #538f8d;
+      --secondary-color: #2f4553;
+      --text-color-light: rgba(255, 255, 255, 0.74);
+      --text-color-medium: rgba(255, 255, 255, 0.589);
+      --font-family: "DM Sans", sans-serif;
+      --font-size: 1.1rem;
+      --space-size: 4vh;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--primary-color);
+    background-color: var(--primary-color);
+  }
+  
+  
+  /* Common styles for layout elements*/
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5vh;
+  }
+  
+  .space {
+    height: var(--space-size);
+  }
+  
+  
+  /* Header */
+  .header {
+      background-color: var(--secondary-color);
+      display: flex;
+      justify-content: center;
+      padding: 1vh 0;
+  }
+  
+  .header__title {
+      font-weight: 700;
+      font-size: 5vh;
+  }
+  
+  /* About Section */
+  .about__image-wrapper {
+      width: 43%;
+      background-color: var(--secondary-color);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-right: 1.5vh;
+  }
+  
+  
+  .about__image-wrapper img {
+    display: block; /* Prevents extra spacing below image */
+    width: 100%;
+  }
+  
+  .about__description {
+      width: 45%;
+      background-color: var(--secondary-color);
+      border-radius: 12px;
+      padding: 2vh 3vh;
+  }
+  
+  .about__description--big {
+    width: 78%;
+    float: right;
+  }
+  
+  .about__text-wraper{
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    justify-content: right;
+  }
+  .about__text {
+    font-size: 2.1vh;
+    color: var(--text-color-medium);
+    text-align: left;
+  }
+  
+  /* Sponsors Section */
+  
+  .logos {
+    overflow: hidden;
+    padding: 10px 0;
+    margin-bottom: 35px;
+    background-color: black;
+    white-space: nowrap;
+    position: relative;
+  }
+  
+  .logos::before,
+  .logos::after {
+    position: absolute;
+    top: 0;
+    width: 135px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+  }
+  
+  
+  .logos::before {
+    left: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0), var(--primary-color));
+  }
+  
+  .logos::after {
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), var(--primary-color));
+  }
+  
+  .logos__slide {
+    display: inline-flex; /* Use inline-flex for horizontal alignment */
+    animation: 12s slide infinite linear;
+  }
+  
+  .logos__slide img {
+    width: 136.75px;
+    height: 68.25px;
+    margin: 0 40px;
+  }
+  
+  
+  @keyframes slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  
+  /* Contact Form */
+  .form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items within container */
+    background-color: var(--secondary-color);
+    border-radius: 12px;
+    padding: 50px;
+    margin-bottom: var(--space-size); /* Use variable for spacing */
+  }
+  
+  
+  .inputxt {
+      border-radius: 12px;
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+      background-color: #397397;
+      color: var(--text-color-medium);
+      text-align: center;
+      border-color: transparent;
+      border-width: 0;
+      
+      width: 100%;  /* Make input fields full width */
+  }
+  
+  input::placeholder {
+      font-size: 18px;
+      color: var(--text-color-medium);
+  }
+  
+  input:hover {
+      opacity: 0.7;
+  }
+  
+  input:active {
+      opacity: 0.5;
+  }
+  
+  .btn-wrapper{
+    display: flex;
+    width: 100%;
+    height: fit-content;
+    justify-content: center;
+  }
+  .sbmbtn {
+    
+      padding: 10px 25px;
+      margin-top: 10px; /* Add some top margin */
+      background-color: #397397;
+      font-size: 16px;
+      color: var(--text-color-medium);
+      border-radius: 12px;
+      cursor: pointer;
+      border-color: transparent;
+      border-width: 0;
+  }
+  
+  
+  /* Footer */
+  .footer {
+      background-color: var(--secondary-color);
+      padding: 20px 0;  /* Consistent padding */
+  }
+  
+  .footer__text {
+      color: var(--text-color-light);
+      text-align: center;
+      margin-bottom: 10px; /* Space between text and social links */
+  
+  }
+  
+  input:focus {
+    outline: none;
+    border: none;
+}
+  .social-links {
+      display: flex;
+      justify-content: center;
+  }
+  
+  .social-link {
+      display: block; /* Fixes issue where links were causing a slight shift */
+  }
+  
+  .social-icon {
+    background-color: var(--primary-color);
+    border-radius: 12px;
+    width: 51px;
+    height: 51px;
+  }
+  
+  /* Section Titles */  /* New shared style for section titles */
+  .section-title {
+    text-align: center;
+    margin-bottom: 2vh;
+    font-size: 3.5vh;
+    font-weight: 700;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Add consistent font to titles */
+  
+    color: var(--text-color-light);
+  
+  }
+  
+  
+  
+  
+  /* Media Queries */
+  @media screen and (min-width: 620px) {
+    .about {
+      display: flex;
+    }
+    .about__image-wrapper,
+    .about__description {
+      flex: 1; /* Equal width for image and description */
+    }
+    .about__description {
+      margin-left: 1.5vh;
+    }
+    .about__description--big {
+      flex: 2;
+    }
+  }
+  
+  
+  /* ... (previous styles) */
+
+/* Media Queries */
+@media screen and (min-width: 1450px) {
+
+    .container {
+      max-width: 95%; /* Occupy more horizontal space */
+      padding: 0 2vw; /* Smaller padding, relative to viewport */
+    }
+  
+    /* ... other large screen styles */
+  
+  }
+  
+
+  /* ... (previous styles) */
+
+/* Media Queries */
+@media screen and (min-width: 1450px) {
+
+    .container {
+      padding: 0 358px; /* Keep the existing padding */
+    }
+  
+    .about {
+      flex-direction: row; /* Ensure it's a row on larger screens */
+      align-items: center; /* Vertically center content */
+    }
+  
+    .about__image-wrapper {
+      width: 40%; /* Adjust image size */
+      margin-right: 3vw; /* Use relative units for better scaling */
+    }
+  
+    .about__description {
+      width: 55%; /* Adjust description size */
+      padding: 3vh 4vw; /* Increase padding */
+    }
+    .about__description--big {
+      width: 55%; /* Consistent width on large screens */
+    }
+  
+  
+    .logos__slide img {
+      width: 170px; /* Slightly larger logos */
+      height: auto; /* Maintain aspect ratio */
+      margin: 0 50px;  /* Increased spacing */
+    }
+  
+  
+    .form-container {
+      padding: 60px 80px; /* Larger padding */
+      max-width: 600px;  /* Limit the width of the form */
+      margin-left: auto;
+      margin-right: auto; /* Center the form */
+  
+    }
+  
+    .inputxt {
+      font-size: 20px; /* Slightly larger font */
+      padding: 12px; /* Increased padding */
+    }
+  
+    input::placeholder {
+        font-size: 20px;
+    }
+    .sbmbtn {
+        padding: 7px 20px; /* Larger button */
+        font-size: 1.2rem;  /* Increase button font size */
+    }
+  
+  
+    .footer__text {
+      font-size: 1.4rem; /* Larger footer text */
+    }
+  
+  
+  }
+  .about {
+    display: flex;
+    align-items: flex-start; /* Align items to the top of the container */
+    gap: 1.5vh;
+  }
+  
+  
+  .about__image-wrapper {
+      width: 43%;
+      border-radius: 12px;
+      overflow: hidden;
+  }
+  
+  
+  
+  .about__content { /* New container for text content */
+      width: 57%; /* Adjust as needed */
+  }
+  
+  .about__description {
+      background-color: var(--secondary-color);
+      border-radius: 12px;
+      padding: 2vh 3vh;
+  }

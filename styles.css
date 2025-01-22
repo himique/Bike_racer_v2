@@ -80,7 +80,23 @@ body {
     width: 100%;
     padding: 2vh 3vh;
 }
-
+.form_text_wrapper{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 19px;
+}
+.form_text_container{
+    width: fit-content;
+    height: fit-content;
+    
+}
+.form_text{
+    color: var(--text-color-light);
+    font-size: 3vh;
+    font-weight: 700;
+}
 
 .about__description--big {
     width: 100%;
